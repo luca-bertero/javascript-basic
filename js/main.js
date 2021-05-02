@@ -1,27 +1,29 @@
+var main_container = document.querySelector(".counter-container");
+var calc_container = document.querySelector(".calc");
 
-//var box = document.querySelector(".counter-box");
-var ddd=document.querySelector(".counter-container");
-var qqq = document.querySelector(".calc");
-
+//create the box div for contain the counter
 var box = document.createElement("div");
-ddd.appendChild(box);
-ddd.insertBefore(box, qqq);
+main_container.appendChild(box);
+main_container.insertBefore(box, calc_container);
 box.classList.add("counter-box");
 
+//create the displayed value for counter
 var counter = document.createElement("p");
 counter.innerHTML = 0;
 box.appendChild(counter);
 counter.id = "counter";
 
+//create the minus button
 var btnMinus = document.createElement("button");
 btnMinus.innerHTML="-";
 box.appendChild(btnMinus);
-btnMinus.id="ciao";
 
+//create the plus button
 var btnPlus = document.createElement("button");
 btnPlus.innerHTML="+";
 box.appendChild(btnPlus);
 
+//create the reset button
 var btnReset = document.createElement("button");
 btnReset.innerHTML="Reset";
 btnReset.id="reset-btn";
@@ -41,23 +43,29 @@ var btn8 = document.getElementById("btn-8");
 var btn9 = document.getElementById("btn-9");
 var btn0 = document.getElementById("btn-0");
 
-var number="";
+var number = "";
 
 btnPlus.onclick = add;
+
+btnMinus.onclick = minus;
 
 btnReset.onclick = reset;
 
 function add(){
   number++;
-  number_displayed.innerHTML=number;
+  number_displayed.innerHTML = number;
 }
-
-btnMinus.onclick = minus;
 
 function minus() {
   number--;
-  number_displayed.innerHTML=number;
+  number_displayed.innerHTML = number;
 }
+
+function reset() {
+  number = "";
+  number_displayed.innerHTML = 0;
+}
+
 
 btn1.onclick = one;
 btn2.onclick = two;
@@ -121,10 +129,4 @@ function nine() {
 function zero() {
   number = number + "0";
   number_displayed.innerHTML = number;
-}
-
-
-function reset() {
-  number = "";
-  number_displayed.innerHTML = 0;
 }
