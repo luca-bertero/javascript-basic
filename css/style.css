@@ -28,12 +28,14 @@ h1{
   text-align: center;
   border: solid 3px;
   width: 25%;
+  min-width: 300px;
 }
 
 .calc{
   margin-top: 20px;
   border: solid 3px;
   width: 25%;
+  min-width: 300px;
   text-align: center;
 }
 
